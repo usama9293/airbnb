@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import path from "path";
 import mongodb from "./config/db.js";
 import listingRoute from "./routes/listingRoute.js";
+import methodOverride from "method-override";
 
 // Load environment variables
 dotenv.config();
@@ -15,6 +16,10 @@ app.use(express.static("public"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Use method-override middleware
+app.use(methodOverride("_method"));
+
 // Set EJS as the view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(path.resolve(), "views"));

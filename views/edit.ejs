@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>update listing</title>
+    <title>Update Listing</title>
 </head>
 <body>
     <h1>Update Listing</h1>
-    <form ">
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
         <label for="title">Title:</label>
-        <input name="title" id="title" value="<%= listing.title %>"  type="text" required />
+        <input name="title" id="title" value="<%= listing.title %>" type="text" required />
         <br><br>
         
         <label for="description">Description:</label>
-        <textarea name="description" id="description" value="<%= listing.description%>" ></textarea>
+        <textarea name="description" id="description"><%= listing.description %></textarea>
         <br><br>
         
         <label for="image">Image URL:</label>
-        <input name="image" id="image" value="<%= listing.image %>"  type="text" />
+        <input name="image" id="image" value="<%= listing.image %>" type="text" />
         <br><br>
         
         <label for="price">Price:</label>
-        <input name="price" id="price" value="<%= listing.price %>"  type="number" required />
+        <input name="price" id="price" value="<%= listing.price %>" type="number" required />
         <br><br>
         
         <label for="country">Country:</label>
-        <input name="country" id="country" value="<%= listing.country %>"  type="text" required />
+        <input name="country" id="country" value="<%= listing.country %>" type="text" required />
         <br><br>
         
         <label for="location">Location:</label>
-        <input name="location" id="location"value="<%= listing.location %>"  type="text" required />
+        <input name="location" id="location" value="<%= listing.location %>" type="text" required />
         <br><br>
         
-        <button type="submit">Add</button>
+        <button type="submit">Update</button>
     </form>
 </body>
 </html>
